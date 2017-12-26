@@ -87,7 +87,8 @@ public class SpeechToText : Singleton<SpeechToText>
         Debug.Log(token);
         if (showTipFlag)
         {
-            ModelManager.Instance.SetTipText("点我进行提问");
+            //ModelManager.Instance.SetTipText("点我进行提问"); //changed by yimei
+            ModelManager.Instance.SetTipText("点我进行提问\r\nAirtap for question");
         }
     }
 
@@ -189,7 +190,8 @@ public class SpeechToText : Singleton<SpeechToText>
         audioSource.Stop();
 
         ModelManager.Instance.SetMicrophoneIcon(true);
-        ModelManager.Instance.SetTipText("正在聆听中");
+        //ModelManager.Instance.SetTipText("正在聆听中"); //changed by yimei
+        ModelManager.Instance.SetTipText("正在聆听中\r\nListening");
         ModelManager.Instance.SetResponseText("");
 
         if (Microphone.IsRecording(deviceName))
@@ -207,7 +209,8 @@ public class SpeechToText : Singleton<SpeechToText>
         recording = false;
 
         ModelManager.Instance.SetMicrophoneIcon(false);
-        ModelManager.Instance.SetTipText("思考中，请稍候");
+        //ModelManager.Instance.SetTipText("思考中，请稍候"); //changed by yimei
+        ModelManager.Instance.SetTipText("思考中，请稍候\r\nThink for a minute");
 
         StopRecording();
         string filename = "myfile.wav";

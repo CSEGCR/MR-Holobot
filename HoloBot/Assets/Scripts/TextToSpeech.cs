@@ -41,7 +41,9 @@ public class TextToSpeech : Singleton<TextToSpeech>
         yield return www;
         audioSource.clip = www.GetAudioClip(false, true, AudioType.WAV);
         audioSource.Play();
-        ModelManager.Instance.SetTipText("点我进行提问");
+        //changd by yimei
+        //ModelManager.Instance.SetTipText("点我进行提问");
+        ModelManager.Instance.SetTipText("点我进行提问\r\nAirtap for question");
         ModelManager.Instance.SetResponseText("答：" + text);
     }
 
