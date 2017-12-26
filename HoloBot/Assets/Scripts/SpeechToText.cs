@@ -128,14 +128,15 @@ public class SpeechToText : Singleton<SpeechToText>
                 JSONObject jsonObj = new JSONObject(result);
                 string resultStr = jsonObj.GetField("header").GetField("name").str;
                 resultStr = TrimResultStr(resultStr);
-                ModelManager.Instance.SetResponseText("问：" + resultStr);
+                //ModelManager.Instance.SetResponseText("问：" + resultStr); //changed by yimei
+                ModelManager.Instance.SetResponseText("问 Answer：" + resultStr);
 #if WINDOWS_UWP
                 SendMessage(resultStr);
 #endif
             }
             catch
             {
-                TextToSpeech.Instance.SpeakText("对不起，无法听清您说什么");
+                TextToSpeech.Instance.SpeakText("对不起，无法听清您说什么"); //added by yimei //此处不宜中英文混合
             }
         }
     }

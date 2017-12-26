@@ -43,8 +43,9 @@ public class TextToSpeech : Singleton<TextToSpeech>
         audioSource.Play();
         //changd by yimei
         //ModelManager.Instance.SetTipText("点我进行提问");
+        //ModelManager.Instance.SetResponseText("答：" + text);
         ModelManager.Instance.SetTipText("点我进行提问\r\nAirtap for question");
-        ModelManager.Instance.SetResponseText("答：" + text);
+        ModelManager.Instance.SetResponseText("答 Answer：" + text);
     }
 
     public void SpeakText(string text)
